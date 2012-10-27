@@ -1,0 +1,89 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JQuery Countdowwn Timer</title>
+
+<script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+   </script>
+<style type="text/css">
+span#days {   font-size:20px;
+				color:#900;
+				  font-weight:900;
+				
+}
+span#hours {   font-size:20px;
+				color:#903;
+				font-weight:900;
+}
+span#min {   font-size:20px;
+				color:#906;
+				font-weight:900;
+}
+span#sec {   font-size:20px;
+				color:#909;
+				font-weight:900;
+}
+span#date {font-size:22px;
+font-weight:900;
+				color:#900;
+
+
+}
+
+span#mar {font-size:22px;
+font-weight:900;
+color:#03F;}
+
+</style>
+<script type="text/javascript">
+function theTimer(){
+
+
+var marathon=new Date(2012,3,22,10,0,0,0);
+var marathonCount=marathon.getTime();
+var nowish=Date.now();
+var dif=marathonCount-nowish;
+
+var days=Math.floor(dif/(24*60*60*1000));
+dif=dif-days*(24*60*60*1000);
+var hours=Math.floor(dif/(60*60*1000));	
+dif=dif-hours*(60*60*1000);
+var minutes=Math.floor(dif/(60*1000));
+dif=dif-minutes*(60*1000);
+var seconds=Math.floor(dif/1000);
+
+$("#days").html(days);
+$("#hours").html(hours);
+$("#min").html(minutes);
+$("#sec").html(seconds);
+
+
+var counter = setTimeout("theTimer()", 1000) };
+</script>
+</head>
+
+<body onload="theTimer()">
+<a href ="" style="text-decoration:none">
+<center>
+<p id="marathon">There are <span id="days"></span> days, <span id="hours"></span> hours, <span id="min"></span> minutes, and <span id="sec"></span> seconds left </p>
+</center>
+<center>
+<p id="marathon">till the beginning of the Next <span id="mar">Marathon</span> on <span id="date">April 22, 2012.</span></p>
+</center>
+</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
